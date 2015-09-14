@@ -1,4 +1,22 @@
-{
-  "name": "Scott's BBQ",
-  "address": "2734 Hemingway Hwy, Hemingway, SC 29554"
-}
+[
+  {
+    "name": "Scott's BBQ",
+    "address": {
+      "street": "2734 Hemingway Hwy",
+      "state": "SC",
+      "city": "Hemingway",
+      "zipcode": "29554"
+    },
+    "telephone": "(843) 558-0134"
+  },
+  {
+    "name": "Southern Soul Barbeque",
+    "address": {
+      "street": "2020 Demere Rd",
+      "state": "GA",
+      "city": "Saint Simons Island",
+      "zipcode": "31522"
+    },
+    "telephone": "(912) 638-7685"
+  }
+]
