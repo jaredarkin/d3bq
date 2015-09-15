@@ -1,3 +1,4 @@
+// basics
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -5,28 +6,35 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// mongo db
+var dbUrl = "d3bq";
+var collections = ["barbecues"];
+
+console.log(db.barbecues.find().pretty())
+var db = require("mongojs").connect(dbUrl, collections);
+
+app.get("/barbecues", function(req,res){
+  db.barbecues.find({}, function(err, barbecues){
+    if(err) return
+    var response = {
+      barbecues: barbecues
+    }
+    res.json(response)
+  })
+})
+
+// routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+// application instantiation
 var app = express();
-
-
-// setup mongoose/mongo
-
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/d3bq');
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function (callback) {
-  console.log("Connection established to: ", db.name)
-});
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// load dependencies and public directory
 app.use(favicon(path.join(__dirname, 'public', 'images', 'd3bq_fav.png')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -34,8 +42,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// load routes
 app.use('/', routes);
 app.use('/users', users);
+
+
+
+
+// error handlers
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,8 +57,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-// error handlers
 
 // development error handler
 // will print stacktrace
