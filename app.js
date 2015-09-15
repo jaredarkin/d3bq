@@ -6,29 +6,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// application instantiation
+var app = express();
+
 // mongo db
-var dbUrl = "d3bq";
-var collections = ["barbecues"];
+var mongojs = require("mongojs")
 
-console.log(db.barbecues.find().pretty())
-var db = require("mongojs").connect(dbUrl, collections);
+var dbUrl = "d3bq"
+var collections = ["barbecues"]
 
-app.get("/barbecues", function(req,res){
-  db.barbecues.find({}, function(err, barbecues){
-    if(err) return
-    var response = {
-      barbecues: barbecues
-    }
-    res.json(response)
-  })
-})
+var db = mongojs(dbUrl, collections)
 
 // routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
-// application instantiation
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +37,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 
+
+// custom routes
+app.get("/barbecues", function(req,res){
+  db.barbecues.find({}, function(err, barbecues){
+    if(err) return
+    var response = {
+      barbecues: barbecues
+    }
+    res.json(response)
+  })
+})
 
 
 
