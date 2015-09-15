@@ -5,17 +5,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs = require('fs')
 
 // application instantiation
 var app = express();
-
-// mongo db
-var mongojs = require("mongojs")
-
-var dbUrl = "d3bq"
-var collections = ["barbecues"]
-
-var db = mongojs(dbUrl, collections)
 
 // routes
 var routes = require('./routes/index');
@@ -36,20 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // load routes
 app.use('/', routes);
 app.use('/users', users);
-
-
-// custom routes
-app.get("/barbecues", function(req,res){
-  db.barbecues.find({}, function(err, barbecues){
-    if(err) return
-    var response = {
-      barbecues: barbecues
-    }
-    res.json(response)
-  })
-})
-
-
 
 // error handlers
 
