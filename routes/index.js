@@ -11,9 +11,10 @@ router.get('/', function(req, res, next) {
 router.get("/barbecues", function(req,res){
   db.barbecues.find({}, function(err, barbecues){
     if(err) return
-    var response = {
-      barbecues: barbecues
-    }
+    var response = barbecues
+    // {
+    //   barbecues: barbecues
+    // }
     res.json(response)
   })
 })
