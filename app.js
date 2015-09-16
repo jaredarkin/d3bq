@@ -5,7 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var fs = require('fs')
+var fs = require('fs');
 
 // application instantiation
 var app = express();
@@ -29,6 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // load routes
 app.use('/', routes);
 app.use('/users', users);
+
+
 
 // error handlers
 
@@ -60,6 +62,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
