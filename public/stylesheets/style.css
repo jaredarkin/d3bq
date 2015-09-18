@@ -143,6 +143,19 @@ body {
   font-weight: 700;
 }
 
+.map-description {
+  color: #666666;
+  margin: .7em .7em 0 1.1em;
+  line-height: 1em;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.map-description a {
+  text-decoration: none;
+}
+
+
 #selected h1 {
   margin: .7em .7em 0 1.1em;
   color: #666666;
@@ -184,7 +197,7 @@ body {
 
   #infoPanel {
     width: 16em;
-    height: 40em;
+    height: 20em;
     background-color: white;
     position: fixed;
     margin-top: 1.6em;
