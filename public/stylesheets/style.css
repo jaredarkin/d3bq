@@ -135,7 +135,26 @@ body {
   text-rendering: optimizelegibility;
 }
 
+.d3bq-title {
+  color: #c0392b;
+  letter-spacing: .05em;
+  margin: .8em 0 0 .8em;
+  font-size: 2em;
+  font-weight: 700;
+}
 
+#selected h1 {
+  margin: .7em .7em 0 1.1em;
+  color: #666666;
+  line-height: 1.4em;
+  font-size: 1.4em;
+  font-weight: 400;
+  text-overflow: ellipsis;
+}
+
+#infoPanel {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
 
 /* -----------------------------------*/
 /* ---           MEDIA             ---*/
@@ -160,7 +179,6 @@ body {
   #map {
     height: 100vh;
     width: 100vw;
-    z-index: 0;
     position: fixed;
   }
 
@@ -168,7 +186,6 @@ body {
     width: 16em;
     height: 40em;
     background-color: white;
-    z-index: 5;
     position: fixed;
     margin-top: 1.6em;
     margin-left: 1.6em;
@@ -181,74 +198,45 @@ body {
 
 
 
-
-
-
-
-body {
-  margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
-}
-
-p {
-  margin: 0;
-  margin-bottom: 10px;
-}
+/* -----------------------------------*/
+/* ---           VORONOI           ---*/
+/* -----------------------------------*/
 
 .point-cell {
   fill: none;
   pointer-events: all;
   stroke: #000;
-  stroke-opacity: .2;
+  stroke-opacity: .3;
 }
 
 .point-cell:hover, .point-cell.selected {
   fill: none;
   stroke: #000;
-  stroke-opacity: .6;
-  stroke-width: 2px;
+  stroke-opacity: .8;
+  stroke-width: .14em;
 }
 
 .point-cell.selected {
   stroke-opacity: 1;
-  stroke-width: 3px;
+  stroke-width: .2em;
 }
 
 .point circle {
   pointer-events: none;
 }
 
-#map {
-  position:absolute;
-  top:0;
-  bottom:0;
-  width:100%;
-}
 
-#selected,
-#selections,
-#loading:after,
-#about {
+
+/* -----------------------------------*/
+/* ---         LOADING UI          ---*/
+/* -----------------------------------*/
+
+#loading:after {
   position:absolute;
   background-color: #FFF;
   opacity: 0.8;
   border-radius: 2px;
   padding: 10px 10px 0 10px;
-}
-
-#about {
-  bottom: 10px;
-  right: 10px;
-}
-
-#about.visible {
-  width: 200px;
-}
-
-#about .hide {
-  padding-bottom: 0;
-  text-align: right;
 }
 
 #loading.visible:after {
@@ -260,91 +248,4 @@ p {
   margin-top: -30px;
   content: 'drawing...';
   font-size: 18px;
-}
-
-#selections {
-  right:10px;
-  top:10px;
-  width: 190px;
-}
-
-#selections label {
-  display: block;
-  padding-bottom: 8px;
-}
-
-#selections input[type=checkbox] {
-  position: relative;
-  top: -1px;
-}
-
-#selections .key {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 6px;
-  margin: 0 5px;
-}
-
-#selected {
-  bottom: 10px;
-  left: 10px;
-  height: 28px;
-}
-
-#selected h1 {
-  font-size: 20px;
-  margin: 0px;
-  line-height: 20px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.hide,
-.show {
-  padding-bottom: 10px;
-  display: block;
-}
-
-.content {
-  display: none;
-}
-
-@media (min-width: 480px) {
-  .selections .content {
-    display: block;
-  }
-  .selections .show {
-    display: none;
-  }
-}
-
-.hidden .content,
-.visible .show {
-  display: none;
-}
-
-.hidden .show,
-.visible .content {
-  display: block;
-}
-
-@media (max-width: 480px) {
-  #selected {
-    box-sizing: border-box;
-    width: 80%;
-    height: 32px;
-  }
-
-  #selected h1 {
-    font-size: 15px;
-    line-height: 15px;
-    font-weight: bold;
-  }
-}
-
-.mapbox-control-info {
-  display: none !important;
 }

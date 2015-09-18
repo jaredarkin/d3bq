@@ -1,51 +1,37 @@
 <div class="row main">
 
+  <!-- map -->
   <div id='map' class="map column column-lg-7"></div>
 
+  <!-- info panel -->
   <div id='infoPanel' class="info column column-lg-5">
-    <h1>{{title}}</h1>
-    <p>Welcome to {{title}}</p>
-  </div>
-
-  <div id='selections' class="selections">
-  <a href='#' class="show">Choose what bbqs to display</a>
-  <div class='content'>
-    <a href='#' class="hide">Hide</a>
-    <div id="toggles">
+    <h1 class="d3bq-title">{{title}}</h1>
+    <div id='selected'>
+      <h1>Explore bbqs</h1>
     </div>
   </div>
-  </div>
 
-  <!-- Add "drawing" ui element between re-draws -->
+  <!-- "drawing" ui between re-draws -->
   <div id='loading'>
-  </div>
-
-  <div id='selected'>
-    <h1>Explore bbqs</h1>
   </div>
 
   <script>
   // draw map
   L.mapbox.accessToken = 'pk.eyJ1IjoicGV0ZXJnY3V0bGVyIiwiYSI6ImNpZWt1MnczdDAwNDJzbW00OGhidXNnenEifQ.Zcv598pJc80mbyWueMSDmw';
-  var map = L.mapbox.map('map', 'mapbox.outdoors')
-    .setView([33.633, -88.088], 5)
+  var map = L.mapbox.map('map', 'mapbox.outdoors', { zoomControl: false })
+    .setView([33.633, -88.088], 6)
 
-  // url = $.getJSON("/barbecues").then(function(data){
-  //   var array = []
-  //   data[0].features.forEach(function(dataSet){
-  //     array.push(dataSet.properties)
-  //   })
-  //   // console.log(array)
-  //   // console.log(array)
-  //   return array
-  // })
+  new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
-  // url = "/barbecues"
-
-  url = "bbq.csv"
-
-  voronoiMap(map, url);
-
+  // format API call
+  url = $.getJSON("/barbecues").then(function(data){
+    var array = []
+    data[0].features.forEach(function(dataSet){
+      array.push(dataSet.properties)
+    })
+    voronoiMap(map, array)
+    return array
+  })
   </script>
 
 </div>
