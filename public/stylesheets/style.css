@@ -211,7 +211,7 @@ body {
 
 .point-cell:hover, .point-cell.selected {
   fill: none;
-  stroke: #000;
+  stroke: #e74c3c;
   stroke-opacity: .8;
   stroke-width: .14em;
 }
