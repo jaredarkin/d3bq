@@ -4,7 +4,48 @@
 
   <div id='infoPanel' class="info column column-lg-5">
     <h1>{{title}}</h1>
-    <p>Welcome to {{title}}</p>    
+    <p>Welcome to {{title}}</p>
   </div>
+
+  <div id='selections' class="selections">
+  <a href='#' class="show">Choose what bbqs to display</a>
+  <div class='content'>
+    <a href='#' class="hide">Hide</a>
+    <div id="toggles">
+    </div>
+  </div>
+  </div>
+
+  <!-- Add "drawing" ui element between re-draws -->
+  <div id='loading'>
+  </div>
+
+  <div id='selected'>
+    <h1>Explore bbqs</h1>
+  </div>
+
+  <script>
+  // draw map
+  L.mapbox.accessToken = 'pk.eyJ1IjoicGV0ZXJnY3V0bGVyIiwiYSI6ImNpZWt1MnczdDAwNDJzbW00OGhidXNnenEifQ.Zcv598pJc80mbyWueMSDmw';
+  var map = L.mapbox.map('map', 'mapbox.outdoors')
+    .setView([33.633, -88.088], 5)
+
+  // url = $.getJSON("/barbecues").then(function(data){
+  //   var array = []
+  //   data[0].features.forEach(function(dataSet){
+  //     array.push(dataSet.properties)
+  //   })
+  //   // console.log(array)
+  //   // console.log(array)
+  //   return array
+  // })
+
+  // url = "/barbecues"
+
+  url = "bbq.csv"
+
+  voronoiMap(map, url);
+
+  </script>
 
 </div>
