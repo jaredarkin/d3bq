@@ -146,8 +146,8 @@ body {
 .map-description {
   color: #666666;
   margin: .7em .7em 0 1.1em;
-  line-height: 1.2em;
-  font-size: .8em;
+  line-height: 1.4em;
+  font-size: .96em;
   font-weight: 400;
 }
 
@@ -196,8 +196,8 @@ body {
   }
 
   #infoPanel {
-    width: 20em;
-    height: 14em;
+    width: 25em;
+    height: 10em;
     background-color: white;
     position: fixed;
     margin-top: 1.6em;
