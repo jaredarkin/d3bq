@@ -9,14 +9,29 @@ $(document).ready(function() {
   new L.Control.Zoom({ position: 'topright' }).addTo(map);
 
   // format API call
-  url = $.getJSON("/barbecues").then(function(data){
-    var array = []
-    data[0].features.forEach(function(dataSet){
-      array.push(dataSet.properties)
+
+  // url = $.getJSON("/barbecues").then(function(data){
+  //   var array = []
+  //   data[0].features.forEach(function(dataSet){
+  //     array.push(dataSet.properties)
+  //   })
+  //   voronoiMap(map, array)
+  //   return array
+  // })
+
+  url = $.ajax({
+    url: "/barbecues",
+    dataType: 'json',
+    data: data,
+    timeout: 2000,
+    success: success}).then(function(data){
+      var array = []
+      data[0].features.forEach(function(dataSet){
+        array.push(dataSet.properties)
+      })
+      voronoiMap(map, array)
+      return array
     })
-    voronoiMap(map, array)
-    return array
-  })
 
   voronoiMap = function(map, array) {
 
