@@ -23,6 +23,10 @@ $(document).ready(function() {
     url: "/barbecues",
     dataType: 'json',
     timeout: 4000,
+    beforeSend: function(){
+    // this is where we append a loading image
+    $('#infoPanel').html('<div class="loading"><img src="http://placebear.com/200/300" alt="Loading..." /></div>');
+  },
     success: function(data){
       var array = []
       data[0].features.forEach(function(dataSet){
@@ -30,8 +34,11 @@ $(document).ready(function() {
       })
       voronoiMap(map, array)
       return array
-    }
-  })
+    }, error: function(){
+    // failed request; give feedback to user
+    $('#infoPanel').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+  }
+})
 
   voronoiMap = function(map, array) {
 
