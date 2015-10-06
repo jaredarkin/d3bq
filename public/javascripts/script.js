@@ -1,4 +1,4 @@
-window.onload = function() {
+$(document).ready(function() {
   console.log("jQ ready")
 
   // draw map
@@ -138,4 +138,4 @@ window.onload = function() {
         map.addLayer(mapLayer)
     })
   }
-}
+})
