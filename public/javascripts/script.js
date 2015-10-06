@@ -22,7 +22,6 @@ $(document).ready(function() {
   url = $.ajax({
     url: "/barbecues",
     dataType: 'json',
-    data: data,
     timeout: 2000,
     success: success}).then(function(data){
       var array = []
