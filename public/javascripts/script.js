@@ -22,7 +22,7 @@ $(document).ready(function() {
   url = $.ajax({
     url: "/barbecues",
     dataType: 'json',
-    timeout: 2000,
+    timeout: 4000,
     success: function(data){
       var array = []
       data[0].features.forEach(function(dataSet){
