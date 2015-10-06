@@ -23,14 +23,15 @@ $(document).ready(function() {
     url: "/barbecues",
     dataType: 'json',
     timeout: 2000,
-    success: success}).then(function(data){
+    success: function(data){
       var array = []
       data[0].features.forEach(function(dataSet){
         array.push(dataSet.properties)
       })
       voronoiMap(map, array)
       return array
-    })
+    }
+  })
 
   voronoiMap = function(map, array) {
 
