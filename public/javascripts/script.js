@@ -23,10 +23,6 @@ $(document).ready(function() {
     url: "/barbecues",
     dataType: 'json',
     timeout: 4000,
-    beforeSend: function(){
-    // this is where we append a loading image
-    $('#infoPanel').html('<div class="loading"><img src="http://placebear.com/200/300" alt="Loading..." /></div>');
-  },
     success: function(data){
       var array = []
       data[0].features.forEach(function(dataSet){
