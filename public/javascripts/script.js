@@ -23,7 +23,7 @@ $(document).ready(function() {
     url: "/barbecues",
     dataType: 'json',
     timeout: 4000,
-    success: function(data){
+    complete: function(data){
       var array = []
       data[0].features.forEach(function(dataSet){
         array.push(dataSet.properties)
