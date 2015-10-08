@@ -40,10 +40,22 @@ A Voronoi map shows a set of locations, and, around each location, it shows the 
 For d3bq, this visualization helps users to plan their trip and their pit stops wisely. With d3bq, you can evaluate your route against the presence of BBQ and make sure you're hitting the richest of BBQ regions.
 
 
-### Beyond d3bq
+### Beyond d3bq 1.0
 
 With only a week to develop the project, there's more work left to do! I'd like to expand d3bq to include user authentication, profiles, and functionality to support user creation and deletion of BBQ locations. This would allow users to participate in the interactivity further, seeing how their changes to the location set of points alters the Voronoi diagram itself. To make this a more useful tool for trip-planning, I'd then like to use Mapbox's directional methods to add routes and directions to the map.
 
 In addition, I happen to have a personal connection to BBQ and interactive visulizations... That said, I'd like to boilerplate the d3bq code to share as a learning tool. Whether it visualizes hospitals, schools, fire stations, or another public or commercial service, the Voronoi map has amazing potential for depicting the relative sparsity or density of locations in a region. I'd like to package this as an open source template for anyone looking to build a d3 Voronoi map.
 
 More to come here!
+
+### Credit
+
+Much credit, as always, goes to [Mike Bostock](http://bost.ocks.org/mike/), who took the complex work of the OGs, Boris Delaunay and Georgy Voronoy, and immortalized them in such a useable d3 method.
+
+Also, credit to [Mapbox](https://www.mapbox.com/) and [Vladimir Agafonkin](http://agafonkin.com/en/) for connecting leaflet with d3 so effectively.
+
+Finally, credit to [Chris Zetter](http://chriszetter.com/), who inspired me to attempt a d3 and mapping project in the first place.
+
+### Contact
+
+Please contact me anytime with questions or suggestions!
