@@ -29,9 +29,9 @@ I created d3bq as my final project for General Assembly's Web Development Immers
 
 Once you cross the Mason-Dixon line driving south - especially on a long, highway road-trip - each lunch stop becomes a precious opportunity for local, regional BBQ. Each state has a different style and take on the classic food, but finding the best places to stop is a challenge. Whether you're taking 95 South or a web of backroads, you need to find the best BBQ within a reasonable distance of your route, and within a reasonable timeframe for hunger's sake.
 
-### D3BQ as a Solution
+### d3bq as a Solution
 
-D3BQ is my response to this problem. As a first step, it maps [eater.com](http://www.eater.com/)'s top-50 BBQ in the South (I don't fully endorse this list, but for dummy data, it's a very strong start) using D3.js's [Voronoi methods](https://github.com/mbostock/d3/wiki/Voronoi-Geom).
+d3bq is my response to this problem. As a first step, it maps [eater.com](http://www.eater.com/)'s top-50 BBQ in the South (I don't fully endorse this list, but for dummy data, it's a very strong start) using D3.js's [Voronoi methods](https://github.com/mbostock/d3/wiki/Voronoi-Geom).
 
 A [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) uses [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) to visualize multiple locations/coordinates. Please take a look at the linked Wikipedia articles for the mathematical evaluations involved, but put simply:
 
