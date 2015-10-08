@@ -33,5 +33,17 @@ Once you cross the Mason-Dixon line driving south - especially on a long, highwa
 
 D3BQ is my response to this problem. As a first step, it maps [eater.com](http://www.eater.com/)'s top-50 BBQ in the South (I don't fully endorse this list, but for dummy data, it's a very strong start) using D3.js's [Voronoi methods](https://github.com/mbostock/d3/wiki/Voronoi-Geom).
 
+A [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) uses [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) to visualize multiple locations/coordinates. Please take a look at the linked Wikipedia articles for the mathematical evaluations involved, but put simply:
 
-More coming soon...
+A Voronoi map shows a set of locations, and, around each location, it shows the area in which a given point is closer than any other in the set.
+
+For d3bq, this visualization helps users to plan their trip and their pit stops wisely. With d3bq, you can evaluate your route against the presence of BBQ and make sure you're hitting the richest of BBQ regions.
+
+
+### Beyond d3bq
+
+With only a week to develop the project, there's more work left to do! I'd like to expand d3bq to include user authentication, profiles, and functionality to support user creation and deletion of BBQ locations. This would allow users to participate in the interactivity further, seeing how their changes to the location set of points alters the Voronoi diagram itself.
+
+In addition, I happen to have a personal connection to BBQ and interactive visulizations... That said, I'd like to boilerplate the d3bq code to share as a learning tool. Whether it visualizes hospitals, schools, fire stations, or another public or commercial service, the Voronoi map has amazing potential for depicting the relative sparsity or density of locations in a region. I'd like to package this as an open source template for anyone looking to build a d3 Voronoi map.
+
+More to come here!
