@@ -19,6 +19,7 @@ Welcome to d3bq, a companion app for anyone planning a BBQ tour in the Southeast
 
 If you'd like to use or review the raw data used to power d3bq, it's stored in: `bbq-best-of-south.geojson`
 
+---
 
 ### Why BBQ?
 
